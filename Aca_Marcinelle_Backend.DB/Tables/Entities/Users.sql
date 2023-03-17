@@ -1,0 +1,10 @@
+﻿CREATE TABLE [dbo].[Users]
+(
+	[Id] INT NOT NULL, 
+	[UserName] NVARCHAR(50) NOT NULL,
+	[Password] NVARCHAR(50) NOT NULL,
+	[IsActive] BIT NOT NULL DEFAULT 1,
+	CONSTRAINT [PK_User_Id] PRIMARY KEY ([Id]),
+	CONSTRAINT [FK_User_Person] FOREIGN KEY ([Id]) REFERENCES [Persons]([Id]),
+	CONSTRAINT [UK_UserName] UNIQUE ([UserName])
+);
