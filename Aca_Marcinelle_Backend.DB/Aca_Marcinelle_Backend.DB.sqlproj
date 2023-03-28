@@ -84,6 +84,10 @@
     <Build Include="Tables\Infrastructure\Categories.sql" />
     <Build Include="Tables\Infrastructure\WeekDays.sql" />
     <Build Include="Tables\Infrastructure\Levels.sql" />
+    <Build Include="Tables\Relations\Courses_Students.sql" />
+    <Build Include="Tables\Relations\Courses_Teachers.sql" />
+    <Build Include="Triggers\OnDeleteStudent.sql" />
+    <Build Include="Triggers\OnDeleteTeacher.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Scripts\SeedDB.sql" />

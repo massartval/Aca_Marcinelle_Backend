@@ -1,0 +1,7 @@
+﻿CREATE TRIGGER [OnDeleteStudent]
+	ON [dbo].[Students]
+	FOR DELETE, INSERT, UPDATE
+	AS
+	BEGIN
+		SET NOCOUNT ON
+	END

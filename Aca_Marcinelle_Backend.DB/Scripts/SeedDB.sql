@@ -73,10 +73,10 @@ VALUES
 (3, 2, 'Salle Gossiaux');
 
 SET IDENTITY_INSERT [Persons] ON;
-INSERT INTO [Persons]([Id], [AddressId], [CategoryId], [FirstName], [LastName], [BirthDate], [NISS], [Email], [Phone])
+INSERT INTO [Persons]([Id], [CategoryId], [FirstName], [LastName], [BirthDate], [City], [Street], [HouseNumber], [Zipcode], [NISS], [Email], [PhoneNumber])
 VALUES
-(1, 2, 1, 'Valentin', 'Massart', '12/24/1991', '91122438913', 'massart.val@gmail.com', '0472772704'),
-(2, 2, 2, 'Charlotte', 'Franckx', '04/16/1999', '99041638913', 'fckx@gmail.com', '0495196207');
+(1, 1, 'Valentin', 'Massart', '12/24/1991', 'Lodelinsart', 'Rue Albert Delwarte', '23', '6042', '91122438913', 'massart.val@gmail.com', '0472772704'),
+(2, 2, 'Charlotte', 'Franckx', '04/16/1999', 'Montignies-sur-Sambre', 'Rue Jean Jaurès', '198', NULL, '99041638913', 'fckx@gmail.com', '0495196207');
 SET IDENTITY_INSERT [Persons] OFF;
 
 INSERT INTO [Users]([Id], [UserName], [Password], [IsActive])
@@ -123,10 +123,19 @@ SET IDENTITY_INSERT [Articles] OFF;
 
 -- Junction tables
 
-INSERT INTO [Groups_Students]([GroupId], [StudentId], [LevelId])
+INSERT INTO [Courses_Students]([CourseId], [StudentId], [LevelId])
 VALUES
 (1, 1, 6),
 (1, 2, 7);
+
+INSERT INTO [Courses_Teachers]([CourseId], [TeacherId])
+VALUES
+(2, 2);
+
+INSERT INTO [Groups_Students]([GroupId], [StudentId])
+VALUES
+(1, 1),
+(1, 2);
 
 INSERT INTO [Groups_Teachers]([GroupId], [TeacherId])
 VALUES
